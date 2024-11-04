@@ -1,0 +1,23 @@
+/* Inter-Regular */
+@font-face {
+    font-family: 'Roboto', serif;
+    font-weight: 400;
+    font-style: normal;
+    src: url('./Inter_18pt-Regular.ttf');
+  }
+  
+  /* Inter-Medium */
+  @font-face {
+    font-family: 'Roboto', serif;
+    font-weight: 500;
+    font-style: normal;
+    src: url('./Inter_18pt-Medium.ttf');
+  }
+  
+  /* Inter-SemiBold */
+  @font-face {
+    font-family: 'Roboto', serif;
+    font-weight: 600;
+    font-style: normal;
+    src: url('./Inter_18pt-SemiBold.ttf');
+  }
