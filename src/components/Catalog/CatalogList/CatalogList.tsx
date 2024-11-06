@@ -1,60 +1,80 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchCampers } from '../../../redux/campers/campersSlice';
-import { RootState, AppDispatch } from '../../../redux/store';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { fetchCampers } from "../../../redux/campers/campersSlice";
+import { AppDispatch } from "../../../redux/store";
+import { useNavigate } from "react-router-dom";
+import { useCampersSelector } from "../../../redux/campers/campersSelector";
+import styles from "./CatalogList.module.css";
 
-const CampersList: React.FC = () => {
-    const dispatch: AppDispatch = useDispatch();
-    const navigate = useNavigate();
-    const { data, loading, error } = useSelector((state: RootState) => state.campers);
+const CatalogList: React.FC = () => {
+  const dispatch: AppDispatch = useDispatch();
+  const navigate = useNavigate();
+  const { data, loading, error } = useCampersSelector();
 
-    useEffect(() => {
-        dispatch(fetchCampers());
-    }, [dispatch]);
+  useEffect(() => {
+    dispatch(fetchCampers());
+  }, [dispatch]);
 
-    if (loading) return <p>Loading...</p>;
-    if (error) return <p>Error: {error}</p>;
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
-    return (
-        <div>
-            <h2>Campers List</h2>
-            {Array.isArray(data) && data.length > 0 ? (
-                <ul>
-                    {data.map((camper) => (
-                        <li key={camper.id}>
-                            <div>
-                                {camper.gallery.length > 0 && (
-                                    <img
-                                        src={camper.gallery[0].thumb}
-                                        alt={camper.name}
-                                        style={{ width: '100%', height: 'auto' }}
-                                    />
-                                )}
-                            </div>
-                            <div>
-                                <h3>{camper.name}</h3>
-                                <p>Price: ${camper.price}</p>
-                                <p>⭐Rating: {camper.rating}</p>
-                                <p>Location: {camper.location}</p>
-                                <p>Description: {camper.description}</p>
-                                {camper.transmission && <p>Transmission</p>}
-                                {camper.engine && <p>Engine</p>}
-                                {camper.kitchen && <p>Kitchen</p>}
-                                {camper.AC && <p>AC</p>}
-                                {camper.TV && <p>TV</p>}
-                                {camper.bathroom && <p>Bathroom</p>}
-                                {camper.form && <p>{camper.form}</p>}
-                                <button onClick={() => navigate(`/campers/${camper.id}`)}>Show More</button> {/* Navigate to detail */}
-                            </div>
-                        </li>
-                    ))}
-                </ul>
-            ) : (
-                <p>No campers available</p>
-            )}
-        </div>
-    );
+  return (
+    <div className={styles.container}>
+      {Array.isArray(data) && data.length > 0 ? (
+        <ul className={styles.camperList}>
+          {data.map((camper) => (
+            <li key={camper.id} className={styles.camperItem}>
+              <div className={styles.imageContainer}>
+                {camper.gallery.length > 0 && (
+                  <img
+                    src={camper.gallery[0].thumb}
+                    alt={camper.name}
+                    className={styles.camperImage}
+                  />
+                )}
+              </div>
+              <div className={styles.camperDetails}>
+                <h3 className={styles.camperName}>{camper.name}</h3>
+                <p className={styles.price}>${camper.price}</p>
+                <div className={styles.containerRatingLocatiin}>
+                  <p className={styles.rating}>⭐{camper.rating}</p>
+                  <p className={styles.location}>{camper.location}</p>
+                </div>
+                <p className={styles.description}>{camper.description}</p>
+                <div className={styles.features}>
+                  {camper.transmission && (
+                    <span className={styles.feature}>Transmission</span>
+                  )}
+                  {camper.engine && (
+                    <span className={styles.feature}>Engine</span>
+                  )}
+                  {camper.kitchen && (
+                    <span className={styles.feature}>Kitchen</span>
+                  )}
+                  {camper.AC && <span className={styles.feature}>AC</span>}
+                  {camper.TV && <span className={styles.feature}>TV</span>}
+                  {camper.bathroom && (
+                    <span className={styles.feature}>Bathroom</span>
+                  )}
+                  {camper.form && (
+                    <span className={styles.feature}>{camper.form}</span>
+                  )}
+                </div>
+                <button
+                  onClick={() => navigate(`/catalog/${camper.id}`)}
+                  className={styles.showMoreButton}
+                >
+                  <span className={styles.showMoreButtonText}>Show More</span>
+                </button>
+              </div>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>No campers available</p>
+      )}
+    </div>
+  );
 };
 
-export default CampersList;
+export default CatalogList;

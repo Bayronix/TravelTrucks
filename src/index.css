@@ -1,6 +1,5 @@
 
 :root {
-  --font-family: "Inter", sans-serif;
   font-size: 16px;
   line-height: 24px;
   font-weight: 400;
@@ -16,4 +15,37 @@
 	--button: #e44848;
 	--button-hover: #d84343;
 	--rating: #ffc531;
+}
+
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
 }

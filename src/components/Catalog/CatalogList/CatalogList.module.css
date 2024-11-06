@@ -1,0 +1,154 @@
+.container {
+  max-width: 1200px;
+  float: right;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.camperList {
+  display: block;
+  gap: 20px;
+}
+
+.camperItem {
+  display: flex;
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  margin-bottom: 32px;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.camperItem:hover {
+  transform: translateY(-5px);
+}
+
+.imageContainer {
+  width: 35%;
+  max-width: 300px;
+  height: auto;
+  overflow: hidden;
+  border-radius: 10px;
+}
+
+.camperImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.camperDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  margin-left: 24px;
+}
+
+.camperName {
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.price {
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--main);
+}
+.containerRatingLocatiin {
+  display: flex;
+  margin-top: 8px;
+  margin-bottom: 24px;
+}
+.rating {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+}
+.location {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+  margin-left: 16px;
+}
+.description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 24px;
+}
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.feature {
+  border-radius: 100px;
+  padding: 12px 18px;
+  background: var(--badges);
+  mix-blend-mode: multiply;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  text-align: center;
+  color: var(--main);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.showMoreButton {
+  margin-top: auto;
+  align-self: flex-start;
+  border-radius: 200px;
+  padding: 16px 60px;
+  background: var(--button);
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.showMoreButton:hover {
+  background-color: darken(var(--button), 10%);
+  transform: scale(1.05);
+}
+
+.showMoreButtonText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: -0.01em;
+  color: var(--white);
+}
+
+.showMoreButton:hover .showMoreButtonText {
+  color: var(--main);
+}
