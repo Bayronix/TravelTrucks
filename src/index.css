@@ -1,37 +1,30 @@
-
 :root {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
-
   /* colors */
   --main: #101828;
-	--text: #475467;
-	--white: #fff;
-	--inputs: #f7f7f7;
-	--badges: #f2f4f7;
-	--gray: #6c717b;
-	--gray-light: #dadde1;
-	--button: #e44848;
-	--button-hover: #d84343;
-	--rating: #ffc531;
+  --text: #475467;
+  --white: #fff;
+  --inputs: #f7f7f7;
+  --badges: #f2f4f7;
+  --gray: #6c717b;
+  --gray-light: #dadde1;
+  --button: #e44848;
+  --button-hover: #d84343;
+  --rating: #ffc531;
 }
-
 
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
-    font-family: sans-serif;
-    margin: 0;
-    padding: 0;
+  height: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 img,
@@ -39,13 +32,13 @@ picture,
 video,
 canvas,
 svg {
-    display: block;
-    max-width: 100%;
+  display: block;
+  max-width: 100%;
 }
 
 input,
 button,
 textarea,
 select {
-    font: inherit;
+  font: inherit;
 }

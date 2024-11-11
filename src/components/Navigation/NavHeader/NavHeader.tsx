@@ -1,17 +1,18 @@
 import Navigation from "../NavLinks/NavLinks";
 import styles from "./NavHeader.module.css";
+import Logo from "../../../assets/images/Logo.png";
 
 const NavHeader = () => {
-    return (
-        <div className={styles.container}>
-            <div className={styles.logoContainer}>
-                <svg className={styles.img} viewBox="0 0 136 16" xmlns="http://www.w3.org/2000/svg" aria-label="Logo">
-                    <use href="../src/assets/images/icons.svg#heroIcon" />
-                </svg>
-            </div>
-            <Navigation />
-        </div>
-    );
+  return (
+    <div className={styles.headerContainer}>
+      <div className={styles.logoContainer}>
+        <img className={styles.imgTravels} src={Logo} alt="traveTrucs" />
+      </div>
+      <div className={styles.navWrapper}>
+        <Navigation />
+      </div>
+    </div>
+  );
 };
 
 export default NavHeader;
