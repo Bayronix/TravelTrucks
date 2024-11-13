@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
+import {  useParams } from "react-router-dom";
 import { fetchCampers } from "../../../../redux/campers/campersSlice";
 import { AppDispatch } from "../../../../redux/store";
 import { useCampersSelector } from "../../../../redux/campers/campersSelector";
@@ -25,8 +25,8 @@ const CatalogDetailsInfo: React.FC = () => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>{camper.name}</h2>
-      <p className={styles.rating}>⭐ {camper.rating} Reviews</p>
-      <p className={styles.location}>📍 {camper.location}</p>
+      <p className={styles.rating}>{camper.rating} Reviews</p>
+      <p className={styles.location}> {camper.location}</p>
       <p className={styles.price}>€{camper.price}</p>
 
       <div className={styles.gallery}>

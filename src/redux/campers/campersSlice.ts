@@ -21,6 +21,11 @@ interface Camper {
   TV: boolean;
   bathroom: boolean;
   form: string;
+  length: number;
+  width: number;
+  height: number;
+  tank: number | string;
+  consumption: number | string;
 }
 
 interface CampersState {

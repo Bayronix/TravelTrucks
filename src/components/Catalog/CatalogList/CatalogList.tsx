@@ -6,7 +6,6 @@ import { useNavigate } from "react-router-dom";
 import { useCampersSelector } from "../../../redux/campers/campersSelector";
 import styles from "./CatalogList.module.css";
 
-// Import all icons from sprite.tsx
 import {
   TransmissionIcon,
   EngineIcon,
@@ -78,12 +77,7 @@ const CatalogList: React.FC = () => {
                       Air Conditioning
                     </span>
                   )}
-                  {camper.TV && camper.TV === true && (
-                    <span className={styles.feature}>
-                      <TvIcon />
-                      TV
-                    </span>
-                  )}
+            
                   {camper.bathroom && (
                     <span className={styles.feature}>
                       <BathroomIcon />
