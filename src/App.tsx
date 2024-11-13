@@ -1,6 +1,6 @@
 
 import { Route, Routes } from 'react-router-dom'
-import NavHeader from './components/Navigation/NavHeader/NavHeader.tsx'
+import NavHeader from './components/Navigation/NavHeaderNavigation/NavHeader/NavHeader.tsx'
 import HomePage from './pages/HomePage/HomePage.tsx'
 import CatalogPage from './pages/CatalogPage/CatalogPage.tsx'
 import CatalogPageDetails from './pages/CatalogPageDetail/CatalogPageDetails.tsx'

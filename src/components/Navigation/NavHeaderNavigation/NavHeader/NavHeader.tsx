@@ -1,6 +1,6 @@
-import Navigation from "../NavLinks/NavLinks";
+import Navigation from "../NavLinks/NavLinks.tsx";
 import styles from "./NavHeader.module.css";
-import Logo from "../../../assets/images/Logo.png";
+import Logo from "../../../../assets/images/Logo.png";
 
 const NavHeader = () => {
   return (

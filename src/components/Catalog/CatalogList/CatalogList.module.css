@@ -1,7 +1,7 @@
 .container {
   max-width: 888px;
   float: right;
-  margin-right: 64px;
+  margin-right: 94px;
   margin-left: 64px;
   padding-bottom: 40px;
 }
@@ -46,8 +46,8 @@
   border-radius: 20px;
   padding: 24px;
   margin-bottom: 32px;
-  max-width: 840px;
-  height: 320px;
+  max-width: 888px;
+  height: 368px;
   box-sizing: border-box;
   overflow: hidden;
   transition: transform 0.3s ease;
@@ -84,8 +84,8 @@
 
 .containerHeader {
   display: flex;
-  justify-content: space-between; /* Додає простір між ціною і назвою */
-  align-items: center; /* Вирівнює по вертикалі */
+  justify-content: space-between; 
+  align-items: center; 
 }
 
 .price {
@@ -93,7 +93,7 @@
   font-size: 24px;
   line-height: 133%;
   color: var(--main);
-  margin-right: 16px; /* Додає відступ справа для розділення з назвою */
+  margin-right: 16px; 
 }
 
 .camperName {
@@ -104,7 +104,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  flex: 1; /* Дозволяє назві займати залишковий простір */
+  flex: 1; 
 }
 
 .containerRatingLocation {
