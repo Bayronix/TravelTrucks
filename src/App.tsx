@@ -29,11 +29,10 @@ function App() {
           <Route path="futures" element={
             <>
             <FuturesContent />
-            <BookingForm/> </>} />
+             </>} />
 
             <Route path="reviews" element={
             <><ReviewsContent />
-            <BookingForm/> 
             
          </>} />
           

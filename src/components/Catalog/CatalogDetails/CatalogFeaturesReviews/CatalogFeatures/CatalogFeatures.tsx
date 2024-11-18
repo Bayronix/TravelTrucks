@@ -6,11 +6,12 @@ import { fetchCampers } from "../../../../../redux/campers/campersSlice";
 import { AcIcon, BathroomIcon, EngineIcon, KitchenIcon, TransmissionIcon } from "../../../../../assets/spriteSvgComponents/sprite";
 import { useCampersSelector } from "../../../../../redux/campers/campersSelector";
 import { useParams } from "react-router-dom";
+import BookingForm from "../BookingForm/BookingForm";
 
 const FuturesContent = () => {
   const dispatch: AppDispatch = useDispatch();
   const { data, loading, error } = useCampersSelector();
-  const { id } = useParams<{ id: string }>(); // Отримуємо id з параметрів URL
+  const { id } = useParams<{ id: string }>();
 
   useEffect(() => {
     dispatch(fetchCampers());
@@ -19,14 +20,14 @@ const FuturesContent = () => {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error: {error}</p>;
 
-  // Знайдемо camper за id
   const camper = data.find((item) => item.id === id);
 
   if (!camper) return <p>No camper found with this ID</p>;
 
   
   return (
-    <div className={styles.container}>
+    <div className={styles.container} >
+      <div className={styles.containerFeatures}>
       <div className={styles.features}>
         {camper.transmission && (
           <span className={styles.feature}>
@@ -64,42 +65,48 @@ const FuturesContent = () => {
           </div>
           
 
-          <div>
-              <h3>Vehicle details</h3>
-              {camper.transmission && (
-                  <span className={styles.feature}>
-                      Form
-            {camper.form}
-          </span>
-        )}
-        {camper.engine && (
-                  <span className={styles.feature}>
-                      Length
-            {camper.length}
-          </span>
-        )}
-              {camper.kitchen && (   
-          <span className={styles.feature}>
-                      Width
-                       {camper.width}
-          </span>
-        )}
-        {camper.AC && (
-          <span className={styles.feature}>
-                      Height
-                      {camper.height}
-          </span>
-        )}
-        {camper.bathroom && (
-          <span className={styles.feature}>
-                      Tank
-                      {camper.tank}
-          </span>
-        )}
-        {camper.form && (
-          <span className={styles.feature}>Consumption{camper.consumption}</span>
-        )}
+         <div>
+  <h3 className={styles.h3 }>Vehicle details</h3>
+  {camper.transmission && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Form</span>
+      <span className={styles.featureValue}>{camper.form}</span>
+    </div>
+  )}
+  {camper.engine && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Length</span>
+      <span className={styles.featureValue}>{camper.length}</span>
+    </div>
+  )}
+  {camper.kitchen && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Width</span>
+      <span className={styles.featureValue}>{camper.width}</span>
+    </div>
+  )}
+  {camper.AC && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Height</span>
+      <span className={styles.featureValue}>{camper.height}</span>
+    </div>
+  )}
+  {camper.bathroom && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Tank</span>
+      <span className={styles.featureValue}>{camper.tank}</span>
+    </div>
+  )}
+  {camper.form && (
+    <div className={styles.featureRow}>
+      <span className={styles.featureLabel}>Consumption</span>
+      <span className={styles.featureValue}>{camper.consumption}</span>
+    </div>
+  )}
+</div>
+
         </div>
+      <div><BookingForm/></div>
     </div>
   );
 };

@@ -30,7 +30,7 @@ const CatalogDetailsInfo: React.FC = () => {
       <p className={styles.price}>€{camper.price}</p>
 
       <div className={styles.gallery}>
-        {camper.gallery.map((image) => (
+        {camper.gallery.slice(0,3).map((image) => (
           <img
             key={image.original}
             src={image.thumb}

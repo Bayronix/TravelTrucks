@@ -1,0 +1,40 @@
+
+.divNavContainer {
+    max-width: 1312px;
+    margin: 0 auto;
+    border-radius: 10px;
+    margin-top: 80px;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: start;
+    gap: 20px;
+    margin-bottom: 44px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+.navLi {
+    font-size: 16px;
+    font-weight: 500;
+    
+}
+
+
+.navText {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--main, #333);
+    text-decoration: none;
+
+}
+
+.navText.active {
+    
+    color: red;
+}

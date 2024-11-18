@@ -11,7 +11,6 @@ import {
   EngineIcon,
   KitchenIcon,
   AcIcon,
-  TvIcon,
   BathroomIcon,
 } from "../../../assets/spriteSvgComponents/sprite.tsx";
 
@@ -83,9 +82,6 @@ const CatalogList: React.FC = () => {
                       <BathroomIcon />
                       Bathroom
                     </span>
-                  )}
-                  {camper.form && (
-                    <span className={styles.feature}>{camper.form}</span>
                   )}
                 </div>
 

@@ -1,6 +1,5 @@
 .container {
   width: 1312px;
-  padding: 0 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -34,7 +33,6 @@
 .gallery {
   display: flex;
   gap: 32px;
-  justify-content: space-between;
 }
 
 .image {

@@ -1,10 +1,54 @@
 .container {
-    border: 1px solid var(--gray-light);
+border: 1px solid var(--gray-light);
 border-radius: 10px;
 padding: 44px;
 width: 641px;
 height: 588px;
 }
 
+.containerFormField{
+    border-radius: 12px;
+    padding: 18px 337px 18px 18px;
+    width: 527px;
+    height: 60px;
+    background: var(--inputs);
+    border: none;
+}
 
 
+.containerFormFieldComent{
+    border-radius: 10px;
+    padding: 18px 308px 76px 18px;
+    width: 527px;
+    height: 118px;
+    background: var(--inputs);
+    border: none;
+}
+
+.containerHeaderContainer {
+    padding-bottom: 10px;
+}
+
+.containerDiv {
+    padding-top: 14px;
+}
+
+.button {
+    display: flex;
+    margin: 0 auto;
+    border-radius: 200px;
+    padding: 16px 60px;
+    width: 166px;
+    height: 56px;
+    background: var(--button);
+    border: none;
+    margin-top: 24px;
+}
+
+.buttonText{
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 150%;
+    letter-spacing: -0.01em;
+    color: var(--white);
+}
